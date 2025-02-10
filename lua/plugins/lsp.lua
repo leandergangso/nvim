@@ -11,6 +11,7 @@ return {
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "j-hui/fidget.nvim",
     },
 
     config = function()
@@ -27,12 +28,16 @@ return {
             cmp_lsp.default_capabilities()
         )
 
+        local fidget = require("fidget")
+        fidget.setup({})
+
         local mason = require("mason")
         mason.setup({})
 
         local lspconfig = require("lspconfig")
         local mason_lsp = require("mason-lspconfig")
         mason_lsp.setup({
+            auto_install = true,
             ensure_installed = {
                 "lua_ls",
                 "gopls",
