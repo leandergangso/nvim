@@ -38,4 +38,3 @@ vim.opt.splitbelow = true
 
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
-

@@ -27,13 +27,14 @@ autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
     end
 })
 
--- remove trailing whitespace before save
---autocmd("BufWritePre", {
---    group = MyGroup,
---    pattern = "*",
---    command = [[%s/\s\+$//e]],
---})
-
+-- auto format on save
+autocmd("BufWritePre", {
+    group = MyGroup,
+    callback = function()
+        require("conform").format({ async = true, lsp_format = 'fallback' })
+    end
+})
