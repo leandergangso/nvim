@@ -17,7 +17,9 @@ return {
     config = function()
         local conform = require("conform")
         conform.setup({
-            formatters_by_ft = {}
+            formatters_by_ft = {
+                lua = { "stylua" },
+            }
         })
 
         local cmp_lsp = require("cmp_nvim_lsp")

@@ -23,14 +23,17 @@ autocmd("LspAttach", {
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        --vim.keymap.set("n", "gr", require("telescope.builtin").lsp_definitions, opts)
+        -- fix vim.keymap.set("n", "gI", vim.lsp.buf.integration, opts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
-        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
     end
 })
 
+-- fix not working for :wa and inconsistent for :w it seems
 -- auto format on save
 autocmd("BufWritePre", {
     group = MyGroup,

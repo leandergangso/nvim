@@ -11,7 +11,7 @@ vim.opt.inccommand = "split"
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
--- vim.opt.showmode = false
+vim.opt.showmode = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -36,5 +36,5 @@ vim.opt.showmatch = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.updatetime = 50
-vim.opt.timeoutlen = 300
+vim.opt.updatetime = 100
+vim.opt.timeoutlen = 400
