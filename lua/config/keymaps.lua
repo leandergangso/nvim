@@ -23,10 +23,10 @@ vim.keymap.set("n", "<leader>wj", "<C-w><C-j>")
 vim.keymap.set("n", "<leader>wk", "<C-w><C-k>")
 
 -- buffer navigation
-vim.keymap.set('n', '<leader>bn', "<cmd>bn<CR>")
-vim.keymap.set('n', '<leader>bp', "<cmd>bp<CR>")
---vim.keymap.set('n', '<leader>bo', "<cmd>bo<CR>")
---vim.keymap.set('n', '<leader>bd', "<cmd>bd<CR>")
+vim.keymap.set('n', '<leader>bn', "<cmd>bn<CR>", {desc="[B]uffer [N]ext"})
+vim.keymap.set('n', '<leader>bp', "<cmd>bp<CR>", {desc="[B]uffer [P]rev"})
+vim.keymap.set('n', '<leader>bd', "<cmd>bd<CR>", {desc="[B]uffer [D]elete"})
+vim.keymap.set('n', '<leader>bw', "<cmd>bw<CR>", {desc="[B]uffer [W]ipeout"})
 
 -- move the lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

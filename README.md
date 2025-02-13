@@ -6,4 +6,5 @@
 
 - Neovim (duh)
 - [Nerd Font](https://www.nerdfonts.com) (prefer FiraCode)
+- Remember to install needed opts from `:Mason`
 

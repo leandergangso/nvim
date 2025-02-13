@@ -44,10 +44,10 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "gopls",
-                "astro",
+                "emmet_ls",
             },
             handlers = {
-                function(server_name) -- default handler if not found
+                function(server_name) -- default handler
                     lspconfig[server_name].setup({
                         capabilities = capabilities,
                     })
@@ -59,11 +59,6 @@ return {
                 end,
                 gopls = function()
                     lspconfig.gopls.setup({
-                        capabilities = capabilities,
-                    })
-                end,
-                astro = function()
-                    lspconfig.astro.setup({
                         capabilities = capabilities,
                     })
                 end,
@@ -87,6 +82,7 @@ return {
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
+                { name = "path" },
             }, {
                 { name = "buffer" },
             }),

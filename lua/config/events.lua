@@ -32,12 +32,3 @@ autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
     end
 })
-
--- fix not working for :wa and inconsistent for :w it seems
--- auto format on save
-autocmd("BufWritePre", {
-    group = MyGroup,
-    callback = function()
-        require("conform").format({ async = true, lsp_format = 'fallback' })
-    end
-})
