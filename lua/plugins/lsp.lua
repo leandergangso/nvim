@@ -19,6 +19,7 @@ return {
         conform.setup({
             formatters_by_ft = {
                 lua = { "stylua" },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
             }
         })
 
@@ -43,6 +44,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "gopls",
+                "astro",
             },
             handlers = {
                 function(server_name) -- default handler if not found
@@ -57,6 +59,11 @@ return {
                 end,
                 gopls = function()
                     lspconfig.gopls.setup({
+                        capabilities = capabilities,
+                    })
+                end,
+                astro = function()
+                    lspconfig.astro.setup({
                         capabilities = capabilities,
                     })
                 end,

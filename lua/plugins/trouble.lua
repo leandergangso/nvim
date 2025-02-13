@@ -1,6 +1,5 @@
 return {
 	"folke/trouble.nvim",
-    lazy = true,
 	opts = {
 		icons = false,
 	},
