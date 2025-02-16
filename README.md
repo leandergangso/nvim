@@ -6,5 +6,11 @@
 
 - Neovim (duh)
 - [Nerd Font](https://www.nerdfonts.com) (prefer FiraCode)
-- Remember to install needed opts from `:Mason`
+
+## Setup
+
+- Make and CD into: `~/.config/nvim`
+- Clone this repo: `git clone {URL}`
+- Open Neovim with: `nvim`
+- Exec `:Mason` and install whats needed
 
