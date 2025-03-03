@@ -54,9 +54,6 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "gopls",
-                    "emmet_ls",
-                    "html",
-                    "astro",
                 },
                 handlers = {
                     function(server_name) -- default handler

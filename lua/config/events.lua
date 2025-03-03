@@ -20,7 +20,7 @@ autocmd("TextYankPost", {
 autocmd("LspAttach", {
     group = MyGroup,
     callback = function(e)
-        local opts = { buffer = e.buf }
+        local opts = { buffer = e.buf } -- only apply to the current buffer
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)

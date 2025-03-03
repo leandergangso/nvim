@@ -5,6 +5,7 @@ autocmd("FileType", {
     pattern = "go",
     callback = function(e)
         local opts = { buffer = e.buf } -- only apply to the current buffer
+
         vim.keymap.set(
             "n",
             "<leader>ee",

@@ -4,9 +4,9 @@ vim.g.maplocalleader = " "
 -- NOTE: curretly telescope and oil uses different keymaps for opening buffer splits (i'm not much of a split person so perhaps don't care?)
 
 -- insert mode
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Escape to normal mode" })
+--vim.keymap.set("i", "jj", "<Esc>", { desc = "Escape to normal mode" })
 
--- common commands
+-- launch program 
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[-] File Explorer" })
 vim.keymap.set("n", "<leader>db", "<cmd>Alpha<CR>", { desc = "[D]ash[B]oard" })
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "[L]azy" })
@@ -23,10 +23,16 @@ vim.keymap.set("n", "<leader>wj", "<C-w><C-j>")
 vim.keymap.set("n", "<leader>wk", "<C-w><C-k>")
 
 -- buffer navigation
-vim.keymap.set('n', '<leader>bn', "<cmd>bn<CR>", {desc="[B]uffer [N]ext"})
-vim.keymap.set('n', '<leader>bp', "<cmd>bp<CR>", {desc="[B]uffer [P]rev"})
-vim.keymap.set('n', '<leader>bd', "<cmd>bd<CR>", {desc="[B]uffer [D]elete"})
-vim.keymap.set('n', '<leader>bw', "<cmd>bw<CR>", {desc="[B]uffer [W]ipeout"})
+vim.keymap.set('n', '<leader>bn', "<cmd>bn<CR>", { desc = "[B]uffer [N]ext" })
+vim.keymap.set('n', '<leader>bp', "<cmd>bp<CR>", { desc = "[B]uffer [P]rev" })
+vim.keymap.set('n', '<leader>bd', "<cmd>bd<CR>", { desc = "[B]uffer [D]elete" })
+vim.keymap.set('n', '<leader>bw', "<cmd>bw<CR>", { desc = "[B]uffer [W]ipeout" })
+
+-- *list navigation
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- move the lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -43,19 +49,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [[\"_d]])
 
--- yank to system clipboard
+-- system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
---
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- misc
+vim.keymap.set("n", "<leander>nh", "<cmd>nohl<CR>", { desc="[N]o [H]ighlight"})
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc="[S]earch and replace the word the carret is currently on" })
 
--- replace the word the carret is curretly on
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- vim.keymap.set("n", "<leander>nh", "<cmd>nohl<CR>", { desc="[N]o [H]ighlight"})
-
+-- don't want this
 vim.keymap.set("n", "Q", "<nop>")
