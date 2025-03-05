@@ -10,17 +10,18 @@ vim.g.maplocalleader = " "
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[-] File Explorer" })
 vim.keymap.set("n", "<leader>db", "<cmd>Alpha<CR>", { desc = "[D]ash[B]oard" })
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "[L]azy" })
+vim.keymap.set("n", "<leader>M", "<cmd>Mason<CR>", { desc = "[M]ason" })
 vim.keymap.set("n", "<leader>mp", "<cmd>Glow<CR>", { desc = "[M]arkdown [P]review" })
 
 -- write to disk
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "[W]rite" })
 vim.keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { desc = "[W]rite [A]ll" })
 
--- window navigation
-vim.keymap.set("n", "<leader>wh", "<C-w><C-h>")
-vim.keymap.set("n", "<leader>wl", "<C-w><C-l>")
-vim.keymap.set("n", "<leader>wj", "<C-w><C-j>")
-vim.keymap.set("n", "<leader>wk", "<C-w><C-k>")
+-- window navigation (using deafult keymaps)
+--vim.keymap.set("n", "<leader>wh", "<C-w><C-h>")
+--vim.keymap.set("n", "<leader>wl", "<C-w><C-l>")
+--vim.keymap.set("n", "<leader>wj", "<C-w><C-j>")
+--vim.keymap.set("n", "<leader>wk", "<C-w><C-k>")
 
 -- buffer navigation
 vim.keymap.set('n', '<leader>bn', "<cmd>bn<CR>", { desc = "[B]uffer [N]ext" })
@@ -46,12 +47,14 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- to the void
-vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [[\"_d]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>P", [["+P]])
+vim.keymap.set("n", "<leader>p", [["+p]])
 
 -- misc
 vim.keymap.set("n", "<leander>nh", "<cmd>nohl<CR>", { desc="[N]o [H]ighlight"})
