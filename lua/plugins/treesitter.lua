@@ -13,6 +13,7 @@ return {
                 'astro',
                 'javascript',
                 'typescript',
+                'json',
                 'jsdoc',
                 'vimdoc',
                 'markdown',

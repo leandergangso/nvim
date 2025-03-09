@@ -68,7 +68,7 @@ return {
                             capabilities = capabilities,
                         })
                     end,
-                    gopls = function()
+                    ["gopls"] = function()
                         lspconfig.gopls.setup({
                             capabilities = capabilities,
                             settings = {
