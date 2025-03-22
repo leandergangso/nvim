@@ -27,7 +27,7 @@ return {
             local conform = require("conform")
             conform.setup({
                 formatters_by_ft = {
-                    lua = { "stylua" },
+                    lua = { "stylua", stop_after_first = true },
                     json = { "prettierd", "prettier", stop_after_first = true },
                     javascript = { "prettierd", "prettier", stop_after_first = true },
                     typescript = { "prettierd", "prettier", stop_after_first = true },
@@ -56,6 +56,7 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "gopls",
+                    "emmet_ls",
                 },
                 handlers = {
                     function(server_name) -- default handler
@@ -79,6 +80,42 @@ return {
                                     analyses = {
                                         unusedparams = true,
                                         unusedwrite = true,
+                                    },
+                                },
+                            },
+                        })
+                    end,
+                    ["html"] = function()
+                        lspconfig.html.setup({
+                            capabilities = capabilities,
+                            filetypes = { "html", "templ" },
+                        })
+                    end,
+                    ["htmx"] = function()
+                        lspconfig.htmx.setup({
+                            capabilities = capabilities,
+                            filetypes = { "html", "templ" },
+                        })
+                    end,
+                    ["emmet_ls"] = function()
+                        lspconfig.emmet_ls.setup({
+                            capabilities = capabilities,
+                            filetypes = { "html", "css", "templ" }
+                        })
+                    end,
+                    ["templ"] = function()
+                        lspconfig.templ.setup({
+                            capabilities = capabilities,
+                        })
+                    end,
+                    ["tailwindcss"] = function()
+                        lspconfig.tailwindcss.setup({
+                            capabilities = capabilities,
+                            filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+                            settings = {
+                                tailwindCSS = {
+                                    includeLanguages = {
+                                        templ = "html",
                                     },
                                 },
                             },
