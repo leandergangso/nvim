@@ -5,7 +5,10 @@
 ## Prerequisite
 
 - Neovim (duh)
-- [Nerd Font](https://www.nerdfonts.com) (prefer FiraCode)
+- [Nerd Font](https://www.nerdfonts.com) (using: JetBrainsMono Nerd Font)
+    - Download font you want
+    - exec: `mv JetBrainsFont/JetBrains* ~/.local/share/fonts/`
+    - specify font name in terminal settings (see `fc-list` for font names)
 
 ## Setup
 
