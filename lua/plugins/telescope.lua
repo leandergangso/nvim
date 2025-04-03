@@ -7,8 +7,9 @@ return {
             local telescope = require("telescope")
             telescope.setup({
                 pickers = {
-                    buffers = { initial_mode = "normal" },
                     diagnostics = { initial_mode = "normal" },
+                    buffers = { initial_mode = "normal" },
+                    marks = { initial_mode = "normal" },
                 }
             })
             local builtin = require("telescope.builtin")
@@ -18,6 +19,7 @@ return {
             vim.keymap.set("n", "<leader>sw", builtin.grep_string, {})
             vim.keymap.set("n", "<leader>sd", builtin.diagnostics, {})
             vim.keymap.set("n", "<leader>sb", builtin.buffers, {})
+            vim.keymap.set("n", "<leader>sm", builtin.marks, {})
             vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
         end,
     },
