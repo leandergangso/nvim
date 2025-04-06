@@ -6,7 +6,7 @@ return {
         signs = false,
         merge_keywords = true,
         keywords = {
-            NOTE = { color = "hint", alt = { "INFO" } },
+            NOTE = { color = "hint", alt = { "INFO", "IDEA", "DRAFT" } },
             TODO = { color = "info" },
             WARN = { color = "warning", alt = { "HACK" } },
             FIX = { color = "error", alt = { "BUG", "DEV", "DEL" } },
