@@ -81,6 +81,9 @@ return {
                                     analyses = {
                                         unusedparams = true,
                                         unusedwrite = true,
+                                        unreachable = true,
+                                        deprecated = true,
+                                        nilness = true,
                                     },
                                 },
                             },
