@@ -4,7 +4,7 @@
 
 ## Prerequisite
 
-- Neovim (duh)
+- Neovim intalled
 - [Nerd Font](https://www.nerdfonts.com) (using: JetBrainsMono Nerd Font)
     - Download font you want
     - exec: `mv JetBrainsFont/JetBrains* ~/.local/share/fonts/`

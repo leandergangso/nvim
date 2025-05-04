@@ -1,4 +1,4 @@
-# Todo keymaps
+# Keymaps suggestion from AI
 
 Most Common Keymaps (Typically used with Plugins and Custom Configurations)
 
