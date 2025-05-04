@@ -1,11 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- NOTE: curretly telescope and oil uses different keymaps for opening buffer splits (i'm not much of a split person so perhaps don't care?)
-
--- insert mode
---vim.keymap.set("i", "jj", "<Esc>", { desc = "Escape to normal mode" })
-
 -- launch program
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[-] File Explorer" })
 vim.keymap.set("n", "<leader>db", "<cmd>Alpha<CR>", { desc = "[D]ash[B]oard" })
