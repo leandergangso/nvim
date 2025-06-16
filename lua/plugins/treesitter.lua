@@ -10,6 +10,7 @@ return {
                 'go',
                 'html',
                 'css',
+                'vue',
                 'astro',
                 'javascript',
                 'typescript',

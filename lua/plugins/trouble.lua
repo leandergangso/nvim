@@ -1,7 +1,7 @@
 -- https://github.com/folke/trouble.nvim
 return {
     "folke/trouble.nvim",
-    enabled = true,
+    enabled = false,
     opts = {
         icons = false,
     },
