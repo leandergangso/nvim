@@ -1,0 +1,1 @@
+{"name":"mdx-analyzer","primary_source":{"id":"pkg:npm/%40mdx-js/language-server@0.6.1","type":"registry+v1"},"secondary_sources":[],"links":{"opt":{},"share":{},"bin":{"mdx-language-server":"node_modules/.bin/mdx-language-server"}},"schema_version":"1.1","metrics":{"start_time":1750013328930,"completion_time":1750013340140}}
