@@ -75,25 +75,18 @@ return {
                             capabilities = capabilities,
                             settings = {
                                 gopls = {
-                                    staticcheck = true,
-                                    completeUnimported = true,
-                                    usePlaceholders = true,
-                                    semanticTokens = true,
+                                    ui = {
+                                        staticcheck = true,
+                                        completeUnimported = true,
+                                        usePlaceholders = true,
+                                        semanticTokens = true,
+                                    },
                                     analyses = {
                                         unusedparams = true,
                                         unusedwrite = true,
                                         unreachable = true,
                                         deprecated = true,
                                         nilness = true,
-                                    },
-                                    hints = {
-                                        assignVariableTypes = true,
-                                        compositeLiteralFields = true,
-                                        compositeLiteralTypes = true,
-                                        constantValues = true,
-                                        functionTypeParameters = true,
-                                        parameterNames = true,
-                                        rangeVariableTypes = true,
                                     },
                                 },
                             },
@@ -105,21 +98,10 @@ return {
                             filetypes = { "html", "templ" },
                         })
                     end,
-                    ["htmx"] = function()
-                        lspconfig.htmx.setup({
-                            capabilities = capabilities,
-                            filetypes = { "html", "templ" },
-                        })
-                    end,
                     ["emmet_ls"] = function()
                         lspconfig.emmet_ls.setup({
                             capabilities = capabilities,
                             filetypes = { "html", "css", "templ" }
-                        })
-                    end,
-                    ["templ"] = function()
-                        lspconfig.templ.setup({
-                            capabilities = capabilities,
                         })
                     end,
                     ["tailwindcss"] = function()
