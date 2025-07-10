@@ -1,30 +1,23 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        opts = {
-            ensure_installed = {
-                'lua',
-                'luadoc',
-                'bash',
-                'go',
-                'html',
-                'css',
-                'vue',
-                'astro',
-                'javascript',
-                'typescript',
-                'json',
-                'jsdoc',
-                'vimdoc',
-                'markdown',
-                'markdown_inline',
-            },
-            auto_install = true,
-            sync_install = false,
-            indent = { enable = true },
-            highlight = { enable = true }
-        },
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {
+                    'lua',
+                    'vimdoc',
+                    'jsdoc',
+                    'bash',
+                    'go',
+                    'javascript',
+                    'typescript',
+                },
+                auto_install = true,
+                sync_install = false,
+                indent = { enable = true },
+                highlight = { enable = true }
+            })
+        end
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
