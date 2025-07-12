@@ -9,10 +9,10 @@ return {
         signs = false,
         merge_keywords = true,
         keywords = {
-            NOTE = { color = "hint", alt = { "INFO", "IDEA", "DRAFT" } },
+            NOTE = { color = "hint" },
             TODO = { color = "info" },
-            WARN = { color = "warning", alt = { "HACK" } },
-            FIX = { color = "error", alt = { "BUG", "DEV", "DEL" } },
+            WARN = { color = "warning" },
+            FIX = { color = "error"  },
             TEST = { color = "test" },
             PERF = {},
         }
