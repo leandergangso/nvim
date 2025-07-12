@@ -16,12 +16,7 @@ return {
     config = function()
         local conform = require("conform")
         conform.setup({
-            formatters_by_ft = {
-                --lua = { "stylua", stop_after_first = true },
-                --json = { "prettierd", "prettier", stop_after_first = true },
-                --javascript = { "prettierd", "prettier", stop_after_first = true },
-                --typescript = { "prettierd", "prettier", stop_after_first = true },
-            }
+            formatters_by_ft = {}
         })
 
         local cmp_lsp = require("cmp_nvim_lsp")
@@ -41,15 +36,14 @@ return {
         local lspconfig = require("lspconfig")
         local mason_lsp = require("mason-lspconfig")
         mason_lsp.setup({
-            --auto_install = true,
-            --automatic_enable = true,
-            --automatic_installation = false,
+            auto_install = true,
+            automatic_enable = true,
+            automatic_installation = false,
             ensure_installed = {
                 "lua_ls",
-                "gopls",
             },
             handlers = {
-                function(server_name)     -- default handler
+                function(server_name) -- default handler
                     lspconfig[server_name].setup({
                         capabilities = capabilities,
                     })
