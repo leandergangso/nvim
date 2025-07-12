@@ -9,6 +9,8 @@ return {
                     'jsdoc',
                     'bash',
                     'go',
+                    'astro',
+                    'python',
                     'javascript',
                     'typescript',
                 },
@@ -23,7 +25,7 @@ return {
         "nvim-treesitter/nvim-treesitter-context",
         after = "nvim-treesitter",
         config = function()
-            require 'treesitter-context'.setup {
+            require('treesitter-context').setup({
                 enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
                 multiwindow = false,      -- Enable multiwindow support.
                 max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
@@ -37,7 +39,7 @@ return {
                 separator = nil,
                 zindex = 20,     -- The Z-index of the context window
                 on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-            }
+            })
         end
     },
 }

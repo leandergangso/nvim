@@ -10,7 +10,7 @@ return {
                     diagnostics = { initial_mode = "normal" },
                     buffers = { initial_mode = "normal" },
                     marks = { initial_mode = "normal" },
-                }
+                },
             })
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<C-p>", builtin.git_files, {})

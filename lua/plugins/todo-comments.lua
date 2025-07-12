@@ -1,7 +1,10 @@
 return {
     "folke/todo-comments.nvim",
     event = "VimEnter",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
+    },
     opts = {
         signs = false,
         merge_keywords = true,
@@ -14,5 +17,8 @@ return {
             PERF = {},
         }
     },
+    config = function()
+        require("todo-comments").setup()
+        vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<CR>", { desc = "Find TODO comments" })
+    end,
 }
--- TODO: add keymap for telescope picker to list and find existing marks

@@ -17,8 +17,3 @@
 - Open Neovim with: `nvim`
 - Exec `:Mason` and install whats needed
 
-## Will look into
-
-https://github.com/folke/snacks.nvim
-https://github.com/echasnovski/mini.nvim
-
