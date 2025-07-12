@@ -4,7 +4,7 @@ return {
     lazy = true,
     event = 'VimEnter',
     opts = {
-        delay = 500,
+        delay = 1000,
         icons = {
             mappings = true,
             keys = {},
