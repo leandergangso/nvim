@@ -14,11 +14,6 @@ return {
         "j-hui/fidget.nvim",
     },
     config = function()
-        local conform = require("conform")
-        conform.setup({
-            formatters_by_ft = {}
-        })
-
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
             "force",
