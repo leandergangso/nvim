@@ -41,8 +41,8 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "[n] Next Search" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "[N] Prev Search" })
 
 -- to the void
-vim.keymap.set({ "n", "v" }, "<leader>d", [[\"_d]], { desc = "[D]elete to Void" })
-vim.keymap.set("x", "<leader>p", [[\"_dP]], { desc = "[P]aste over Void" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "[D]elete to Void" })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "[P]aste over Void" })
 
 -- system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[Y]ank to System Clipboard" })
