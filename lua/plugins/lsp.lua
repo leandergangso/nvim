@@ -31,9 +31,7 @@ return {
         local lspconfig = require("lspconfig")
         local mason_lsp = require("mason-lspconfig")
         mason_lsp.setup({
-            auto_install = true,
             automatic_enable = true,
-            automatic_installation = false,
             ensure_installed = {
                 "lua_ls",
             },
