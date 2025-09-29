@@ -34,6 +34,7 @@ return {
             automatic_enable = true,
             ensure_installed = {
                 "lua_ls",
+                "gopls",
             },
             handlers = {
                 function(server_name) -- default handler
@@ -46,7 +47,31 @@ return {
                         capabilities = capabilities,
                     })
                 end,
-            },
+                ["ts_ls"] = function()
+                    local mason_registry = require("mason-registry")
+                    local vue_lang_path = ""
+                    if mason_registry.is_installed("vue-language-server") then
+                        vue_lang_path = mason_registry.get_package("vue-language-server"):get_install_path() ..
+                        "/node_modules/@vue/language-server"
+                    else
+                        vim.notify("vue-language-server not installed!", vim.log.levels.ERROR)
+                    end
+                    print("vue_lang_path:", vue_lang_path)
+                    local vue_plugin = {
+                        name = "@vue/typescript-plugin",
+                        location = vue_lang_path,
+                        languages = { "vue" },
+                        configNamespace = "typescript",
+                    }
+                    require("lspconfig").ts_ls.setup({
+                        capabilities = capabilities,
+                        filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
+                        init_options = {
+                            plugins = { vue_plugin },
+                        },
+                    })
+                end,
+            }
         })
 
         local cmp = require("cmp")

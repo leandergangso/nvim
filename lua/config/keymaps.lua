@@ -6,6 +6,7 @@ vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[-] File Explorer" })
 vim.keymap.set("n", "<leader>db", "<cmd>Alpha<CR>", { desc = "[D]ash[B]oard" })
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "[L]azy" })
 vim.keymap.set("n", "<leader>M", "<cmd>Mason<CR>", { desc = "[M]ason" })
+vim.keymap.set("n", "<leader>t", "<cmd>terminal<CR>", { desc = "[T]erminal" })
 
 -- write to disk
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "[W]rite" })
