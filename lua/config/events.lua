@@ -31,3 +31,4 @@ autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { buffer = e.buf, desc = "[F]ormat buffer" })
     end
 })
+
