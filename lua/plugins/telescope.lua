@@ -6,7 +6,34 @@ return {
         config = function()
             local telescope = require("telescope")
             telescope.setup({
+                defaults = {
+                    vimgrep_arguments = {
+                        "rg",
+                        "--color=never",
+                        "--no-heading",
+                        "--with-filename",
+                        "--line-number",
+                        "--column",
+                        "--smart-case",
+                        "--hidden",    -- include hidden files for all grep pickers
+                        "--no-ignore", -- include .gitignore ignored files for all grep pickers
+                        "--glob",
+                        "!**/.git/*",  -- exclude .git directory
+                    },
+                },
                 pickers = {
+                    find_files = {
+                        hidden = true,    -- show hidden files in find_files picker
+                        no_ignore = true, -- include gitignored files in find_files picker
+                        find_command = {
+                            "rg",
+                            "--files",
+                            "--hidden",
+                            "--no-ignore",
+                            "--glob",
+                            "!**/.git/*",
+                        },
+                    },
                     diagnostics = { initial_mode = "normal" },
                     buffers = { initial_mode = "normal" },
                     marks = { initial_mode = "normal" },
