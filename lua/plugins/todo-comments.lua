@@ -12,8 +12,8 @@ return {
             keywords = {
                 NOTE = { color = "hint" },
                 TODO = { color = "info" },
-                WARN = { color = "warning" },
-                FIX = { color = "error" },
+                WARN = { color = "warning", alt = { "BUG" } },
+                FIX = { color = "error", alt = { "DEL" } },
                 TEST = { color = "test" },
                 PERF = {},
             }
