@@ -38,3 +38,21 @@ vim.opt.splitbelow = true
 
 vim.opt.updatetime = 100
 vim.opt.timeoutlen = 400
+
+vim.diagnostic.config({
+	signs = true,
+	underline = true,
+	severity_sort = true,
+	update_in_insert = true,
+	virtual_text = {
+		spacing = 2,
+	},
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = true,
+		header = "",
+		prefix = "",
+	},
+})
