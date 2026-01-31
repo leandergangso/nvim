@@ -39,6 +39,8 @@ vim.opt.splitbelow = true
 vim.opt.updatetime = 100
 vim.opt.timeoutlen = 400
 
+vim.opt.winborder = "rounded"
+
 vim.diagnostic.config({
 	signs = true,
 	underline = true,
