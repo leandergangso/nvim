@@ -47,6 +47,9 @@ return {
 			vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
 			vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "[S]earch [M]arks" })
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+			vim.keymap.set("n", "<leader>/", function()
+				builtin.current_buffer_fuzzy_find({ previewer = false, layout_config = { width = 0.5, height = 0.4 } })
+			end, { desc = "[/] Fuzzy Find" })
 		end,
 	},
 	{
