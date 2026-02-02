@@ -70,16 +70,16 @@ return {
 			}, {
 				{ name = "buffer" },
 			}),
-			window = {
-				completion = {
-					border = "rounded",
-					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-				},
-				documentation = {
-					border = "rounded",
-					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-				},
-			},
+			--window = {
+			--	completion = {
+			--		border = "rounded",
+			--		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+			--	},
+			--	documentation = {
+			--		border = "rounded",
+			--		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+			--	},
+			--},
 		})
 	end,
 }
