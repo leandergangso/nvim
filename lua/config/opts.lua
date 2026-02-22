@@ -5,7 +5,7 @@ vim.g.netrw_winsize = 25
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.signcolumn = "yes"
 vim.opt.inccommand = "split"
 vim.opt.termguicolors = true
@@ -49,9 +49,9 @@ vim.diagnostic.config({
 	},
 	float = {
 		focusable = false,
+		source = true,
 		style = "minimal",
 		border = "rounded",
-		source = true,
 		header = "",
 		prefix = "",
 	},
