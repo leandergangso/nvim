@@ -50,9 +50,17 @@ return {
 			},
 		})
 
+		vim.api.nvim_set_hl(0, "CmpItemAbbr", { link = "Commant" })
+		vim.api.nvim_set_hl(0, "CmpItemMenu", { link = "Commant" })
+
 		local cmp = require("cmp")
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
 		cmp.setup({
+			preselect = cmp.PreselectMode.None,
+			completion = {
+				completeopt = "menu,menuone,noinsert",
+			},
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
@@ -70,16 +78,28 @@ return {
 			}, {
 				{ name = "buffer" },
 			}),
-			--window = {
-			--	completion = {
-			--		border = "rounded",
-			--		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-			--	},
-			--	documentation = {
-			--		border = "rounded",
-			--		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-			--	},
-			--},
+			window = {
+				completion = cmp.config.window.bordered({
+					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+				}),
+				documentation = cmp.config.window.bordered({
+					border = { "", "", "", " " },
+					winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+				}),
+			},
+			formatting = {
+				fields = { "abbr", "kind", "menu" },
+				format = function(entry, vim_item)
+					vim_item.kind = " " .. vim_item.kind
+					vim_item.menu = ({
+						nvim_lsp = "LSP",
+						luasnip = "Snip",
+						buffer = "Buf",
+						path = "Path",
+					})[entry.source.name] or ""
+					return vim_item
+				end,
+			},
 		})
 	end,
 }

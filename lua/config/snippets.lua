@@ -15,6 +15,13 @@ autocmd("FileType", {
 
         vim.keymap.set(
             "n",
+            "<leader>ep",
+            "oif err != nil {<CR>}<Esc>Opanic(err)<Esc>",
+            opts
+        )
+
+        vim.keymap.set(
+            "n",
             "<leader>ea",
             "oassert.NoError(err, \"\")<Esc>F\";a",
             opts
