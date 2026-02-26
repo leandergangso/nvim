@@ -14,6 +14,8 @@ vim.keymap.set("n", "<leader>t", "<cmd>terminal<CR>", { desc = "[T]erminal" })
 -- write to disk
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "[W]rite" })
 vim.keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { desc = "[W]rite [A]ll" })
+--vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>", { desc = "[W]rite [Q]uit" })
+--vim.keymap.set("n", "<leader>wqa", "<cmd>wqa<CR>", { desc = "[W]rite [Q]uit [A]ll" })
 
 -- window navigation
 --vim.keymap.set("n", "<leader>wh", "<C-w><C-h>", { desc = "[W]indow [H] Left" })
