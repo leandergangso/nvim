@@ -28,6 +28,7 @@
   "telescope.nvim": { "branch": "master", "commit": "028d9a0695a0cc4cfa893889f8c408ed7ccc8adc" },
   "todo-comments.nvim": { "branch": "main", "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668" },
   "tree-sitter-manager.nvim": { "branch": "main", "commit": "48396293d84a8dd88b857f298ee5953fa3572e5f" },
+  "typst-preview.nvim": { "branch": "master", "commit": "325036ee145ca51d9efb145c09ac16bce3bc8b7d" },
   "undotree": { "branch": "master", "commit": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
