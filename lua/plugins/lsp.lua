@@ -15,69 +15,125 @@ return {
 	},
 	config = function()
 		local cmp_lsp = require("cmp_nvim_lsp")
+
 		local capabilities = vim.tbl_deep_extend(
 			"force",
-			{},
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
 
-		local fidget = require("fidget")
-		fidget.setup({})
+		require("fidget").setup({})
+		require("mason").setup({})
 
-		local mason = require("mason")
-		mason.setup({})
+		local function configure_lsp(server_name, config)
+			config = config or {}
+			config.capabilities = vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
 
-		local lspconfig = require("lspconfig")
-		local mason_lsp = require("mason-lspconfig")
-		mason_lsp.setup({
-			automatic_enable = true,
-			ensure_installed = {
-				"lua_ls",
-				"gopls",
-			},
-			handlers = {
-				function(server_name) -- default handler
-					lspconfig[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
-				["lua_ls"] = function()
-					lspconfig.lua_ls.setup({
-						capabilities = capabilities,
-					})
-				end,
+			vim.lsp.config(server_name, config)
+		end
+
+		configure_lsp("lua_ls", {
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						checkThirdParty = false,
+					},
+					telemetry = {
+						enable = false,
+					},
+				},
 			},
 		})
 
-		vim.api.nvim_set_hl(0, "CmpItemAbbr", { link = "Commant" })
-		vim.api.nvim_set_hl(0, "CmpItemMenu", { link = "Commant" })
+		configure_lsp("gopls", {
+			settings = {
+				gopls = {
+					gofumpt = true,
+					staticcheck = true,
+					usePlaceholders = true,
+					analyses = {
+						unusedparams = true,
+						unusedwrite = true,
+						nilness = true,
+						shadow = true,
+					},
+				},
+			},
+		})
+
+		configure_lsp("cssls", {
+			settings = {
+				css = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				scss = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				less = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
+		})
+
+		configure_lsp("svelte", {})
+		configure_lsp("tailwindcss", {})
+		configure_lsp("ts_ls", {})
+
+		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"lua_ls",
+				"gopls",
+				"cssls",
+				"svelte",
+				"tailwindcss",
+				"ts_ls",
+			},
+			automatic_enable = true,
+		})
+
+		vim.api.nvim_set_hl(0, "CmpItemAbbr", { link = "Comment" })
+		vim.api.nvim_set_hl(0, "CmpItemMenu", { link = "Comment" })
 
 		local cmp = require("cmp")
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 		cmp.setup({
 			preselect = cmp.PreselectMode.None,
+
 			completion = {
 				completeopt = "menu,menuone,noinsert",
 			},
+
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
 				end,
 			},
+
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
+
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 			}, {
 				{ name = "buffer" },
+				{ name = "path" },
 			}),
+
 			window = {
 				completion = cmp.config.window.bordered({
 					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
@@ -87,6 +143,7 @@ return {
 					winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
 				}),
 			},
+
 			formatting = {
 				fields = { "abbr", "kind", "menu" },
 				format = function(entry, vim_item)
@@ -97,6 +154,7 @@ return {
 						buffer = "Buf",
 						path = "Path",
 					})[entry.source.name] or ""
+
 					return vim_item
 				end,
 			},
