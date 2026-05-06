@@ -8,11 +8,11 @@ M.parsers = {
 	"jsdoc",
 	"bash",
 	"go",
-	"astro",
-	"svelte",
-	"python",
-	"javascript",
-	"typescript",
+	--"astro",
+	--"svelte",
+	--"python",
+	--"javascript",
+	--"typescript",
 }
 
 vim.api.nvim_create_autocmd("FileType", {

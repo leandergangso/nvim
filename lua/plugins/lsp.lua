@@ -16,11 +16,8 @@ return {
 	config = function()
 		local cmp_lsp = require("cmp_nvim_lsp")
 
-		local capabilities = vim.tbl_deep_extend(
-			"force",
-			vim.lsp.protocol.make_client_capabilities(),
-			cmp_lsp.default_capabilities()
-		)
+		local capabilities =
+			vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
 		require("fidget").setup({})
 		require("mason").setup({})
@@ -54,11 +51,13 @@ return {
 					gofumpt = true,
 					staticcheck = true,
 					usePlaceholders = true,
+					completeUnimported = true,
 					analyses = {
 						unusedparams = true,
 						unusedwrite = true,
 						nilness = true,
-						shadow = true,
+						shadow = false,
+						ST1000 = false, -- hide warning: at least one package should have comment
 					},
 				},
 			},
