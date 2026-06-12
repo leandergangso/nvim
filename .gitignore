@@ -1,0 +1,42 @@
+# Neovim runtime files
+/nvim.log
+/.netrwhist
+/Session.vim
+/Sessionx.vim
+
+# Swap, backup, undo, and temporary files
+*.swp
+*.swo
+*.swn
+*~
+*.tmp
+*.bak
+*.orig
+.*.un~
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Lua tooling
+/.luarc.local.json
+/.luacheckcache
+/luac.out
+
+# Test and coverage output
+/.coverage
+/coverage/
+/luacov.report.out
+/luacov.stats.out
+
+# OS and file-manager metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# IDE-specific project state
+/.idea/
+/.vscode/
