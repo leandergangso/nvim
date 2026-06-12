@@ -6,14 +6,14 @@ vim.keymap.set("n", "-", function()
 	if vim.fn.exists(":Oil") == 2 then
 		vim.cmd.Oil()
 	else
-		vim.notify("oil.nvim is not available", vim.log.levels.WARN)
+		vim.api.nvim_echo({ { "oil.nvim is not available", "WarningMsg" } }, true, {})
 	end
 end, { desc = "[-] File Explorer" })
 vim.keymap.set("n", "<leader>db", function()
 	if vim.fn.exists(":Alpha") == 2 then
 		vim.cmd.Alpha()
 	else
-		vim.notify("alpha-nvim is not available", vim.log.levels.WARN)
+		vim.api.nvim_echo({ { "alpha-nvim is not available", "WarningMsg" } }, true, {})
 	end
 end, { desc = "[D]ash[B]oard" })
 

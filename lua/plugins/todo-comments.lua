@@ -22,15 +22,10 @@ todo_comments.setup({
 	},
 })
 
-vim.keymap.set(
-	"n",
-	"<leader>st",
-	function()
-		if vim.fn.exists(":TodoTelescope") == 2 then
-			vim.cmd.TodoTelescope()
-		else
-			vim.notify("todo-comments.nvim is not available", vim.log.levels.WARN)
-		end
-	end,
-	{ desc = "[S]earch [T]odo" }
-)
+vim.keymap.set("n", "<leader>st", function()
+	if vim.fn.exists(":TodoTelescope") == 2 then
+		vim.cmd.TodoTelescope()
+	else
+		vim.api.nvim_echo({ { "todo-comments.nvim is not available", "WarningMsg" } }, true, {})
+	end
+end, { desc = "[S]earch [T]odo" })
