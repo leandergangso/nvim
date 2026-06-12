@@ -20,6 +20,14 @@ autocmd("TextYankPost", {
 autocmd("LspAttach", {
 	group = MyGroup,
 	callback = function(e)
+		local client = assert(vim.lsp.get_client_by_id(e.data.client_id))
+
+		if not vim.g.use_blink_cmp and client:supports_method("textDocument/completion") then
+			vim.lsp.completion.enable(true, client.id, e.buf, {
+				autotrigger = true,
+			})
+		end
+
 		vim.keymap.set("n", "K", function()
 			vim.lsp.buf.hover({ border = "rounded" })
 		end, { buffer = e.buf, desc = "[K] Hover" })
@@ -39,18 +47,6 @@ autocmd("LspAttach", {
 			vim.lsp.buf.workspace_symbol,
 			{ buffer = e.buf, desc = "[W]orkspace [S]ymbol" }
 		)
-		vim.keymap.set("n", "<leader>f", function()
-			local ok, conform = pcall(require, "conform")
-			if ok then
-				conform.format({
-					async = true,
-					lsp_format = "fallback",
-				})
-				return
-			end
-
-			vim.lsp.buf.format({ async = true })
-		end, { buffer = e.buf, desc = "[F]ormat buffer" })
 	end,
 })
 

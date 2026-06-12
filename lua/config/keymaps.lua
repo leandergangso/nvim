@@ -2,20 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- launch program
-vim.keymap.set("n", "-", function()
-	if vim.fn.exists(":Oil") == 2 then
-		vim.cmd.Oil()
-	else
-		vim.api.nvim_echo({ { "oil.nvim is not available", "WarningMsg" } }, true, {})
-	end
-end, { desc = "[-] File Explorer" })
-vim.keymap.set("n", "<leader>db", function()
-	if vim.fn.exists(":Alpha") == 2 then
-		vim.cmd.Alpha()
-	else
-		vim.api.nvim_echo({ { "alpha-nvim is not available", "WarningMsg" } }, true, {})
-	end
-end, { desc = "[D]ash[B]oard" })
+vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[-] File Explorer" })
+vim.keymap.set("n", "<leader>db", "<cmd>Alpha<CR>", { desc = "[D]ash[B]oard" })
 
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "[E]scape terminal insert mode" })
@@ -65,6 +53,19 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[Y]ank to System Cl
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank Line to System Clipboard" })
 vim.keymap.set("n", "<leader>P", [["+P]], { desc = "[P]aste Before (Clipboard)" })
 vim.keymap.set("n", "<leader>p", [["+p]], { desc = "[p]aste After (Clipboard)" })
+
+-- formatting
+vim.keymap.set("n", "<leader>f", function()
+	local ok, conform = pcall(require, "conform")
+	if ok then
+		conform.format({
+			async = true,
+			lsp_format = "fallback",
+		})
+		return
+	end
+	vim.lsp.buf.format({ async = true })
+end, { desc = "[F]ormat buffer" })
 
 -- misc
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "[N]o [H]ighlight" })

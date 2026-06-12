@@ -4,11 +4,7 @@ vim.pack.add({
 	"https://github.com/nvim-telescope/telescope.nvim",
 })
 
-local ok, todo_comments = pcall(require, "todo-comments")
-if not ok then
-	return
-end
-
+local todo_comments = require("todo-comments")
 todo_comments.setup({
 	signs = true,
 	merge_keywords = true,
@@ -22,10 +18,4 @@ todo_comments.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>st", function()
-	if vim.fn.exists(":TodoTelescope") == 2 then
-		vim.cmd.TodoTelescope()
-	else
-		vim.api.nvim_echo({ { "todo-comments.nvim is not available", "WarningMsg" } }, true, {})
-	end
-end, { desc = "[S]earch [T]odo" })
+vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<CR>", { desc = "[S]earch [T]odo" })

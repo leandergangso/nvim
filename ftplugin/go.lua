@@ -1,10 +1,7 @@
-local bufnr = vim.b.bufnr
-local opts = { buffer = bufnr }
+local opts = { buffer = 0 }
 
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", opts)
-
 vim.keymap.set("n", "<leader>ep", "oif err != nil {<CR>}<Esc>Opanic(err)<Esc>", opts)
-
 vim.keymap.set("n", "<leader>ea", 'oassert.NoError(err, "")<Esc>F";a', opts)
 
 vim.keymap.set(
