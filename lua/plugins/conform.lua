@@ -1,31 +1,22 @@
-return {
-	"stevearc/conform.nvim",
-	opts = {
-		formatters_by_ft = {
-			lua = { "stylua" },
-			go = { "gofmt" },
+vim.pack.add({
+	"https://github.com/stevearc/conform.nvim",
+})
 
-			-- Format these with Prettier.
-			svelte = { "prettier" },
-			javascript = { "prettier" },
-			typescript = { "prettier" },
-			json = { "prettier" },
-			markdown = { "prettier" },
+local ok, conform = pcall(require, "conform")
+if not ok then
+	return
+end
 
-			-- Intentionally do not format Tailwind CSS entry files.
-			css = { "prettier" },
-			scss = { "prettier" },
-		},
-
-		--format_on_save = function(bufnr)
-		--	local ft = vim.bo[bufnr].filetype
-		--	if ft == "css" or ft == "scss" then
-		--		return nil
-		--	end
-		--	return {
-		--		timeout_ms = 1000,
-		--		lsp_format = "fallback",
-		--	}
-		--end,
+conform.setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		go = { "gofmt" },
+		svelte = { "prettier" },
+		javascript = { "prettier" },
+		typescript = { "prettier" },
+		json = { "prettier" },
+		markdown = { "prettier" },
+		css = { "prettier" },
+		scss = { "prettier" },
 	},
-}
+})

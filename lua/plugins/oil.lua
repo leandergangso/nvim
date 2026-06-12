@@ -1,17 +1,22 @@
-return {
-	"stevearc/oil.nvim",
-	dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },
-	lazy = false,
-	opts = {
-		float = {
-			padding = 2,
-			border = "rounded",
-		},
-		confirmation = {
-			border = "rounded",
-		},
-		view_options = {
-			show_hidden = false,
-		},
+vim.pack.add({
+	"https://github.com/nvim-tree/nvim-web-devicons",
+	"https://github.com/stevearc/oil.nvim",
+})
+
+local ok, oil = pcall(require, "oil")
+if not ok then
+	return
+end
+
+oil.setup({
+	float = {
+		padding = 2,
+		border = "rounded",
 	},
-}
+	confirmation = {
+		border = "rounded",
+	},
+	view_options = {
+		show_hidden = false,
+	},
+})

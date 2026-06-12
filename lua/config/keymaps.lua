@@ -2,10 +2,20 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- launch program
-vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[-] File Explorer" })
-vim.keymap.set("n", "<leader>db", "<cmd>Alpha<CR>", { desc = "[D]ash[B]oard" })
-vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "[L]azy" })
-vim.keymap.set("n", "<leader>M", "<cmd>Mason<CR>", { desc = "[M]ason" })
+vim.keymap.set("n", "-", function()
+	if vim.fn.exists(":Oil") == 2 then
+		vim.cmd.Oil()
+	else
+		vim.notify("oil.nvim is not available", vim.log.levels.WARN)
+	end
+end, { desc = "[-] File Explorer" })
+vim.keymap.set("n", "<leader>db", function()
+	if vim.fn.exists(":Alpha") == 2 then
+		vim.cmd.Alpha()
+	else
+		vim.notify("alpha-nvim is not available", vim.log.levels.WARN)
+	end
+end, { desc = "[D]ash[B]oard" })
 
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "[E]scape terminal insert mode" })
@@ -57,7 +67,7 @@ vim.keymap.set("n", "<leader>P", [["+P]], { desc = "[P]aste Before (Clipboard)" 
 vim.keymap.set("n", "<leader>p", [["+p]], { desc = "[p]aste After (Clipboard)" })
 
 -- misc
-vim.keymap.set("n", "<leander>nh", "<cmd>nohl<CR>", { desc = "[N]o [H]ighlight" })
+vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "[N]o [H]ighlight" })
 vim.keymap.set(
 	"n",
 	"<leader>s",

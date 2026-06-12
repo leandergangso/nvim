@@ -39,12 +39,17 @@ autocmd("LspAttach", {
 			vim.lsp.buf.workspace_symbol,
 			{ buffer = e.buf, desc = "[W]orkspace [S]ymbol" }
 		)
-		--vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { buffer = e.buf, desc = "[F]ormat buffer" })
 		vim.keymap.set("n", "<leader>f", function()
-			require("conform").format({
-				async = true,
-				lsp_format = "fallback",
-			})
+			local ok, conform = pcall(require, "conform")
+			if ok then
+				conform.format({
+					async = true,
+					lsp_format = "fallback",
+				})
+				return
+			end
+
+			vim.lsp.buf.format({ async = true })
 		end, { buffer = e.buf, desc = "[F]ormat buffer" })
 	end,
 })
