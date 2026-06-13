@@ -26,7 +26,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("nvim-treesitter").install(parsers)
-
 require("treesitter-context").setup({
 	enable = true,
 	multiwindow = false,
