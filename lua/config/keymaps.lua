@@ -56,15 +56,10 @@ vim.keymap.set("n", "<leader>p", [["+p]], { desc = "[p]aste After (Clipboard)" }
 
 -- formatting
 vim.keymap.set("n", "<leader>f", function()
-	local ok, conform = pcall(require, "conform")
-	if ok then
-		conform.format({
-			async = true,
-			lsp_format = "fallback",
-		})
-		return
-	end
-	vim.lsp.buf.format({ async = true })
+	require("conform").format({
+		async = true,
+		lsp_format = "fallback",
+	})
 end, { desc = "[F]ormat buffer" })
 
 -- misc

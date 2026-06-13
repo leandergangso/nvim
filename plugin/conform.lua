@@ -2,11 +2,7 @@ vim.pack.add({
 	"https://github.com/stevearc/conform.nvim",
 })
 
-local ok, conform = pcall(require, "conform")
-if not ok then
-	return
-end
-
+local conform = require("conform")
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },

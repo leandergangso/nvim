@@ -17,3 +17,6 @@ vim.keymap.set(
 	'oif err != nil {<CR>}<Esc>O.logger.Error("error", "error", err)<Esc>F.;i',
 	opts
 )
+
+vim.b.undo_ftplugin = (vim.b.undo_ftplugin or "")
+	.. " | lua for _, lhs in ipairs({'<leader>ee','<leader>ep','<leader>ea','<leader>ef','<leader>el'}) do pcall(vim.keymap.del, 'n', lhs, { buffer = true }) end"

@@ -3,11 +3,7 @@ vim.pack.add({
 	"https://github.com/stevearc/oil.nvim",
 })
 
-local ok, oil = pcall(require, "oil")
-if not ok then
-	return
-end
-
+local oil = require("oil")
 oil.setup({
 	float = {
 		padding = 2,

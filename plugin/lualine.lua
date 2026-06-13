@@ -3,11 +3,7 @@ vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 })
 
-local ok, lualine = pcall(require, "lualine")
-if not ok then
-	return
-end
-
+local lualine = require("lualine")
 lualine.setup({
 	options = {
 		theme = "auto",

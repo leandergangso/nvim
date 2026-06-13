@@ -5,9 +5,4 @@ vim.pack.add({
 	},
 })
 
-local ok = pcall(vim.cmd.colorscheme, "catppuccin")
-if not ok then
-    vim.api.nvim_echo({
-		{ "catppuccin not available, using default colorscheme", "WarningMsg" },
-	}, true, {})
-end
+vim.cmd.colorscheme("catppuccin")

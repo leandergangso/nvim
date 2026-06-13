@@ -6,11 +6,7 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 })
 
-local ok, harpoon = pcall(require, "harpoon")
-if not ok then
-	return
-end
-
+local harpoon = require("harpoon")
 harpoon:setup()
 
 vim.keymap.set("n", "<C-e>", function()

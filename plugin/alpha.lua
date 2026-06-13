@@ -2,11 +2,7 @@ vim.pack.add({
 	"https://github.com/goolord/alpha-nvim",
 })
 
-local ok, alpha = pcall(require, "alpha")
-if not ok then
-	return
-end
-
+local alpha = require("alpha")
 local dashboard = require("alpha.themes.startify")
 
 dashboard.section.header.val = {
