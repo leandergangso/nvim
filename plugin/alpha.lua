@@ -1,5 +1,5 @@
 vim.pack.add({
-	"https://github.com/goolord/alpha-nvim",
+	"github.com/goolord/alpha-nvim",
 })
 
 local alpha = require("alpha")

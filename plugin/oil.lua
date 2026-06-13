@@ -1,6 +1,6 @@
 vim.pack.add({
-	"https://github.com/nvim-tree/nvim-web-devicons",
-	"https://github.com/stevearc/oil.nvim",
+	"github.com/nvim-tree/nvim-web-devicons",
+	"github.com/stevearc/oil.nvim",
 })
 
 local oil = require("oil")

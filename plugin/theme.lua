@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "https://github.com/catppuccin/nvim",
+		src = "github.com/catppuccin/nvim",
 		name = "catppuccin",
 	},
 })
