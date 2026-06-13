@@ -1,10 +1,3 @@
--- Disabled while testing native completion. Remove this block to enable Blink.
-if true then
-	return
-end
-
-vim.g.use_blink_cmp = true
-
 vim.pack.add({
 	{
 		src = "https://github.com/Saghen/blink.cmp",
@@ -14,7 +7,6 @@ vim.pack.add({
 })
 
 local blink = require("blink.cmp")
-
 blink.setup({
 	keymap = {
 		preset = "default",
