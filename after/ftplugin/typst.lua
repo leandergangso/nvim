@@ -1,7 +1,3 @@
-if vim.g.typst_preview_loaded then
-	return
-end
-
 vim.pack.add({
 	"github.com/chomosuke/typst-preview.nvim",
 })
@@ -13,5 +9,3 @@ require("typst-preview").setup({
 		websocat = vim.fn.exepath("websocat"),
 	},
 })
-
-vim.g.typst_preview_loaded = true
