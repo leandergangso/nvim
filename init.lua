@@ -1,4 +1,4 @@
-require("config.options")
-require("config.keymaps")
-require("config.filetypes")
-require("config.events")
+require("options")
+require("keymaps")
+require("filetypes")
+require("events")
