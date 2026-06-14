@@ -1,5 +1,5 @@
 vim.pack.add({
-	"github.com/stevearc/conform.nvim",
+	"https://github.com/stevearc/conform.nvim",
 })
 
 require("conform").setup({

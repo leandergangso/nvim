@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "github.com/Saghen/blink.cmp",
+		src = "https://github.com/Saghen/blink.cmp",
 		version = vim.version.range("1"),
 	},
 	--"github.com/rafamadriz/friendly-snippets",

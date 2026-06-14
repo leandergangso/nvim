@@ -1,5 +1,5 @@
 vim.pack.add({
-	"github.com/chomosuke/typst-preview.nvim",
+	"https://github.com/chomosuke/typst-preview.nvim",
 })
 
 require("typst-preview").setup({

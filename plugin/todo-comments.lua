@@ -1,7 +1,7 @@
 vim.pack.add({
-	"github.com/folke/todo-comments.nvim",
-	"github.com/nvim-lua/plenary.nvim",
-	"github.com/nvim-telescope/telescope.nvim",
+	"https://github.com/folke/todo-comments.nvim",
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/nvim-telescope/telescope.nvim",
 })
 
 require("todo-comments").setup({

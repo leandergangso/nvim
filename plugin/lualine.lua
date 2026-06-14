@@ -1,6 +1,6 @@
 vim.pack.add({
-	"github.com/nvim-tree/nvim-web-devicons",
-	"github.com/nvim-lualine/lualine.nvim",
+	"https://github.com/nvim-tree/nvim-web-devicons",
+	"https://github.com/nvim-lualine/lualine.nvim",
 })
 
 require("lualine").setup({

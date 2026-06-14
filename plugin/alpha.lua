@@ -1,5 +1,5 @@
 vim.pack.add({
-	"github.com/goolord/alpha-nvim",
+	"https://github.com/goolord/alpha-nvim",
 })
 
 local alpha = require("alpha")
@@ -20,7 +20,7 @@ dashboard.section.header.val = {
 
 table.insert(
 	dashboard.section.top_buttons.val,
-	dashboard.button("u", "Update plugins", "<cmd>lua vim.pack.update(nil, { force = true })<CR>")
+	dashboard.button("u", "Update plugins", "<cmd>lua vim.pack.update()<CR>")
 )
 
 alpha.setup(dashboard.opts)

@@ -1,9 +1,9 @@
 vim.pack.add({
 	{
-		src = "github.com/ThePrimeagen/harpoon",
+		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2",
 	},
-	"github.com/nvim-lua/plenary.nvim",
+	"https://github.com/nvim-lua/plenary.nvim",
 })
 
 local harpoon = require("harpoon")

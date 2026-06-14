@@ -163,7 +163,7 @@ only when startup order matters:
 -- plugin/00-theme.lua
 vim.pack.add({
     {
-        src = "github.com/catppuccin/nvim",
+        src = "https://github.com/catppuccin/nvim",
         name = "catppuccin",
     },
 })
