@@ -4,8 +4,7 @@ vim.pack.add({
 	"github.com/nvim-telescope/telescope.nvim",
 })
 
-local todo_comments = require("todo-comments")
-todo_comments.setup({
+require("todo-comments").setup({
 	signs = true,
 	merge_keywords = true,
 	keywords = {

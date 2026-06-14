@@ -2,8 +2,7 @@ vim.pack.add({
 	"github.com/stevearc/conform.nvim",
 })
 
-local conform = require("conform")
-conform.setup({
+require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		go = { "gofmt" },

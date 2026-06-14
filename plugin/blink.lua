@@ -3,11 +3,10 @@ vim.pack.add({
 		src = "github.com/Saghen/blink.cmp",
 		version = vim.version.range("1"),
 	},
-	"github.com/rafamadriz/friendly-snippets",
+	--"github.com/rafamadriz/friendly-snippets",
 })
 
-local blink = require("blink.cmp")
-blink.setup({
+require("blink.cmp").setup({
 	keymap = {
 		preset = "default",
 	},

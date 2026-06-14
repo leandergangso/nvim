@@ -2,8 +2,7 @@ vim.pack.add({
 	"github.com/lewis6991/gitsigns.nvim",
 })
 
-local gitsigns = require("gitsigns")
-gitsigns.setup({
+require("gitsigns").setup({
 	signs = {
 		add = { text = "+" },
 		change = { text = "~" },

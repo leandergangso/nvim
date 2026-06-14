@@ -3,8 +3,7 @@ vim.pack.add({
 	"github.com/stevearc/oil.nvim",
 })
 
-local oil = require("oil")
-oil.setup({
+require("oil").setup({
 	float = {
 		padding = 2,
 		border = "rounded",
