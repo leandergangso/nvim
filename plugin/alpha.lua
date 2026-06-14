@@ -18,4 +18,9 @@ dashboard.section.header.val = {
 	[[                                                                       ]],
 }
 
+table.insert(
+	dashboard.section.top_buttons.val,
+	dashboard.button("u", "Update plugins", "<cmd>lua vim.pack.update(nil, { force = true })<CR>")
+)
+
 alpha.setup(dashboard.opts)
