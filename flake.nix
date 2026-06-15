@@ -1,23 +1,30 @@
 {
-  description = "Editor toolchain for personal Neovim config";
+  description = "Toolchain for Neovim";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       systems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
 
-      forAllSystems = f:
-        builtins.listToAttrs (map (system: {
-          name = system;
-          value = f system;
-        }) systems);
+      forAllSystems =
+        f:
+        builtins.listToAttrs (
+          map (system: {
+            name = system;
+            value = f system;
+          }) systems
+        );
     in
     {
-      packages = forAllSystems (system:
+      packages = forAllSystems (
+        system:
         let
           pkgs = import nixpkgs { inherit system; };
           editorTools = pkgs.buildEnv {
@@ -52,6 +59,7 @@
           prettier = pkgs.prettier;
           tinymist = pkgs.tinymist;
           websocat = pkgs.websocat;
-        });
+        }
+      );
     };
 }

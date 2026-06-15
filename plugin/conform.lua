@@ -13,5 +13,6 @@ require("conform").setup({
 		markdown = { "prettier" },
 		css = { "prettier" },
 		scss = { "prettier" },
+		nix = { "nixfmt" },
 	},
 })
