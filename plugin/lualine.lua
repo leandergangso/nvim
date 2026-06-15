@@ -5,6 +5,8 @@ vim.pack.add({
 require("lualine").setup({
 	options = {
 		theme = "auto",
+		globalstatus = true,
+		disabled_filetypes = { "alpha", "oil" },
 	},
 	sections = {
 		lualine_a = { "mode" },
@@ -14,8 +16,10 @@ require("lualine").setup({
 				"filename",
 				path = 1,
 			},
+			"diagnostics",
+			"lsp_progress",
 		},
-		lualine_x = { "encoding", "fileformat" },
+		lualine_x = { "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},
