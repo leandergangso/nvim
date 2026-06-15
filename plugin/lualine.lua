@@ -12,12 +12,8 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff" },
 		lualine_c = {
-			{
-				"filename",
-				path = 1,
-			},
+			{ "filename", path = 1 },
 			"diagnostics",
-			"lsp_progress",
 		},
 		lualine_x = { "filetype" },
 		lualine_y = { "progress" },
