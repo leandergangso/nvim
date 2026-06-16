@@ -1,5 +1,11 @@
 # Personal Neovim config
 
+## MOVED
+
+https://github.com/leandergangso/dotfiles
+
+---
+
 ![vim meme](scripts/vim-neo.jpg)
 
 ## Prerequisite
